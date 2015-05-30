@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-TW">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <title>SPY</title>
+</head>
+<body>
+
+<div class="app">
+    <div id="deviceready" class="blink">
+
+        <div data-role="page" id="flashPage">
+
+            <div data-role="header">
+                <h1>Flash Page</h1>
+                <script>
+
+                </script>
+            </div>
+
+            <div data-role="main" class="ui-content">
+
+            </div>
+
+            <div data-role="footer">
+            </div>
+
+        </div>
+        <!--推薦商品頁-->
+        <div data-role="page" id="promoPage">
+            <!-- 左邊開的Drawer  -->
+            <div data-role="panel" id="drawer" data-display="reveal" data-position-fixed="true" data-theme="f">
+                <ul data-role="listview">
+                    <li><a href="#">List Item</a></li>
+                    <li><a href="#">List Item</a></li>
+                    <li><a href="#">List Item</a></li>
+                    <li><a href="#">List Item</a></li>
+                </ul>
+            </div>
+            <!-- 頁頭 -->
+            <div data-role="header">
+                <a href="#drawer" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+
+                <h1>美食櫥窗</h1>
+            </div>
+            <!-- 內容 -->
+
+            <div data-role="main" class="ui-content">
+
+                <div class="content">
+                </div>
+
+            </div>
+
+
+            <!-- 頁尾 -->
+            <div data-role="footer">
+                <h1>Footer Text</h1>
+            </div>
+
+        </div>
+        <!--商家資料頁-->
+        <div data-role="page" id="ownerPage">
+
+            <div data-role="header">
+                <h1>Owner Page</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+            </div>
+
+            <div data-role="footer">
+            </div>
+
+        </div>
+        <!--商品資料頁-->
+        <div data-role="page" id="itemPage">
+
+            <div data-role="header">
+                <h1>Item Page</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+            </div>
+
+            <div data-role="footer">
+            </div>
+
+        </div>
+        <!--購物車頁-->
+        <div data-role="page" id="cartPage">
+
+            <div data-role="header">
+                <h1>Cart Page</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+            </div>
+
+            <div data-role="footer">
+            </div>
+
+        </div>
+        <!--購買歷史頁-->
+        <div data-role="page" id="historyPage">
+
+            <div data-role="header">
+                <h1>History Page</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+            </div>
+
+            <div data-role="footer">
+            </div>
+
+        </div>
+        <!--帳戶資料頁-->
+        <div data-role="page" id="accountPage">
+
+            <div data-role="header">
+                <h1>Account Page</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+            </div>
+
+            <div data-role="footer">
+            </div>
+
+        </div>
+
+    </div>
+    <!--商品樣板-->
+    <script id="card-template" type="text/template">
+        <div class="card">
+            <!--Template 開始-->
+            {{#imageurl}}
+            <div class="card-image " style="background-image:url('{{imageurl}}')">
+                <!--<div class="card-image {{ image }}" >-->
+                {{#banner}}
+                <div class="banner"></div>
+                {{/banner}}
+                {{#caption}} <h2>{{caption}}</h2> {{/caption}}
+            </div>
+            {{/imageurl}}
+
+            {{#title}} <h1>{{title}}</h1> {{/title}}
+            {{#message}} <p>{{{message}}}</p> {{/message}}
+            {{#spec}}<p>{{spec}}</p>{{/spec}}
+            {{#ownername}}
+            <div class="ownerinfo">
+                <a href=""><img class="photo" src="{{photourl}} "/></a>
+
+                <div class="ownername">
+                    {{ownername}}
+                </div>
+                <div class="shoppingcart">
+
+                </div>
+            </div>
+            {{/ownername}}
+            <!--Template 結束-->
+        </div>
+    </script>
+    <script src="cordova.js"></script>
+
+    <script src="js/index.js"></script>
+    <!--<script src="js/zepto.min.js"></script>-->
+    <script src="js/mustache.js"></script>
+    <script src="js/gencards.js"></script>
+</div>
+</body>
+</html>
+
+<!--var person = {
+firstName: "Christophe",
+lastName: "Coenraets",
+blogURL: "http://coenraets.org"
+};
+var template = "<h1>{{firstName}} {{lastName}}</h1>Blog: {{blogURL}}";
+var html = Mustache.to_html(template, person);
+$('#sampleArea').html(html);-->

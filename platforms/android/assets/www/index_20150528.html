@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-TW">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no; width=device-width"/>
+    <link rel="import" href="components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="components/paper-tabs/paper-tabs.html">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <title>SPY</title>
+</head>
+<body>
+<div class="app">
+    <div id="deviceready" class="blink">
+
+        <core-toolbar>
+            <paper-icon-button  icon="menu" onclick="window.open('#','_self');" ></paper-icon-button>
+            <div flex>美食櫥窗</div>
+            <paper-icon-button icon="shopping-cart" onclick="window.open('#','_self');" ></paper-icon-button>
+            <paper-icon-button icon="payment" onclick="window.open('#','_self');" ></paper-icon-button>
+            <paper-icon-button icon="account-circle" onclick="window.open('http://google.com','_self');" ></paper-icon-button>
+            <!--<paper-icon-button icon="more-vert" onclick="window.open('#','_self');" ></paper-icon-button>-->
+        </core-toolbar>
+
+        <!--<div class="header">美食櫥窗</div>-->
+
+        <div class="content">
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+
+<script id="card-template" type="text/template">
+    <div class="card">
+        <!--Template 開始-->
+        {{#imageurl}}
+        <div class="card-image " style="background-image:url('{{imageurl}}')" >
+        <!--<div class="card-image {{ image }}" >-->
+            {{#banner}} <div class="banner"></div> {{/banner}}
+            {{#caption}} <h2>{{caption}}</h2> {{/caption}}
+        </div>
+        {{/imageurl}}
+
+        {{#title}} <h1>{{title}}</h1> {{/title}}
+        {{#message}} <p>{{{message}}}</p> {{/message}}
+        {{#spec}}<p>{{spec}}</p>{{/spec}}
+        {{#ownername}}
+        <div class="ownerinfo" >
+            <a href=""><img class="photo" src="{{photourl}} " /></a>
+            <div class="ownername" >
+                {{ownername}}
+            </div>
+            <div class="shoppingcart">
+                <paper-icon-button icon="add-shopping-cart" ></paper-icon-button>
+            </div>
+        </div>
+        {{/ownername}}
+        <!--Template 結束-->
+    </div>
+</script>
+
+
+
+<script type="text/javascript" src="components/platform/platform.js"></script>
+<script type="text/javascript" src="js/cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/mustache.js"></script>
+<script type="text/javascript" src="js/gencards.js"></script>
+
+</body>
+</html>
